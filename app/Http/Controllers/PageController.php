@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Place;
 use Pvtl\VoyagerPages\Page;
 use Pvtl\VoyagerFrontend\Helpers\Layouts;
 use Pvtl\VoyagerFrontend\Traits\Breadcrumbs;
@@ -24,9 +25,11 @@ class PageController extends \Pvtl\VoyagerPages\Http\Controllers\PageController
     public function getPage($slug = 'home')
     {
         $page = Page::where('slug', '=', $slug)->firstOrFail();
+        $places = Place::all();
 
         $view = view("{$this->viewPath}::modules.pages.default", [
             'page' => $page,
+            'places' => $places,
         ]);
 
         $page = Page::findOrFail((int)$view->page->id);
