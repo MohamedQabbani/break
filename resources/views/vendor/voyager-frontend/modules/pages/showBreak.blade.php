@@ -13,7 +13,7 @@
                     {{ $place->title }} -
                     {{ $place->location }} -
                     {{ $place->mobile }} -
-                    {{ $place->created_at }}
+                    {{ date('Y-m-d', strtotime($place->created_at)) }}
                 </div>
                 <div class="card-body">
                     <p class="card-text">{!! $place->description !!}</p>
