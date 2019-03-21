@@ -12,7 +12,8 @@
                 <div class="card-header text-primary">
                     {{ $place->title }} -
                     {{ $place->location }} -
-                    {{ $place->mobile }}
+                    {{ $place->mobile }} -
+                    {{ $place->created_at }}
                 </div>
                 <div class="card-body">
                     <p class="card-text">{!! $place->description !!}</p>
