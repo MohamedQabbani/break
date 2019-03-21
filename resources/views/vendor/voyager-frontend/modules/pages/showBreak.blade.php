@@ -13,6 +13,7 @@
                     {{ $place->title }} -
                     {{ $place->location }} -
                     {{ $place->mobile }} -
+                    تاريخ الإنشاء
                     {{ date('Y-m-d', strtotime($place->created_at)) }}
                 </div>
                 <div class="card-body">
