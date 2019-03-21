@@ -9,7 +9,7 @@
     <div class="row d-flex p-5" style="text-align: center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header text-primary">
                     {{ $place->title }} -
                     {{ $place->location }} -
                     {{ $place->mobile }}
@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <p class="card-text">{!! $place->description !!}</p>
                     @foreach(json_decode($place->image, 1) as $image)
-                        <img class="card-img-bottom img-fluid w-75" src="{{ url('storage/'.$image) }}"
+                        <img class="card-img-bottom img-fluid w-50" src="{{ url('storage/'.$image) }}"
                              alt="">
                     @endforeach
                 </div>
