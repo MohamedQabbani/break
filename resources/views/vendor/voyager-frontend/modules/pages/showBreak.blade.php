@@ -16,8 +16,8 @@
                     تاريخ النشر
                     {{ date('d-m-Y', strtotime($place->created_at)) }}
                 </div>
-                <div class="card-body">
-                    <p class="card-text" style="direction: rtl;">{!! $place->description !!}</p>
+                <div class="card-body" style="direction: rtl;">
+                    <p class="card-text">{!! $place->description !!}</p>
                     @foreach(json_decode($place->image, 1) as $image)
                         <img class="card-img-bottom img-fluid w-50 p-2" src="{{ url('storage/'.$image) }}"
                              alt="">
