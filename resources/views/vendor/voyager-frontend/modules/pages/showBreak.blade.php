@@ -11,7 +11,8 @@
             <div class="card">
                 <div class="card-header">
                     {{ $place->title }} -
-                    {{ $place->location }}
+                    {{ $place->location }} -
+                    {{ $place->mobile }}
                 </div>
                 <div class="card-body">
                     <p class="card-text">{!! $place->description !!}</p>
