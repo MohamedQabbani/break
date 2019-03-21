@@ -20,6 +20,9 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Route::get('/breaks/{id}', "\App\Http\Controllers\PageController@showBreak")
+    ->middleware('web')->name('breaks.show');
+
 Route::get('/{slug?}', "\App\Http\Controllers\PageController@getPage")
     ->middleware('web')
     ->where('slug', '.+');

@@ -94,4 +94,22 @@ class PageController extends \Pvtl\VoyagerPages\Http\Controllers\PageController
                 'alert-type' => 'success',
             ]);
     }
+
+    public function showBreak(Request $request, $id, $slug = 'home')
+    {
+        $page = Page::where('slug', '=', $slug)->firstOrFail();
+        $place = Place::findOrFail($id);
+
+        $view = view("{$this->viewPath}::modules.pages.showBreak", [
+            'page' => $page,
+            'place' => $place,
+        ]);
+
+        $page = Page::findOrFail((int)$view->page->id);
+
+        $view->layout = $page->layout;
+        $view = BladeCompiler::getHtmlFromString($view, [], true);
+
+        return $view;
+    }
 }
